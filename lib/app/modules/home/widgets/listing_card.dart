@@ -10,12 +10,12 @@ Widget listingCard() {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Column(
         children: [
-          Container(
+          ClipRRect(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
             child: Image.network(
               "https://bayut-production.s3.eu-central-1.amazonaws.com/image/183615390/901b83bde9ed43639c3b4c2ff1f5d4cc",
               fit: BoxFit.contain,
             ),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(15, 8, 8, 4),
