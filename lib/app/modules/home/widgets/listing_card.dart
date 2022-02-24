@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:octo_image/octo_image.dart';
 
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
@@ -10,11 +12,23 @@ Widget listingCard() {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-            child: Image.network(
-              "https://bayut-production.s3.eu-central-1.amazonaws.com/image/183615390/901b83bde9ed43639c3b4c2ff1f5d4cc",
-              fit: BoxFit.contain,
+          Container(
+            height: Get.height * 0.3,
+            width: Get.width * 0.95,
+            child: ClipRRect(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+              // child: Image.network(
+              //   "https://bayut-production.s3.eu-central-1.amazonaws.com/image/183615390/901b83bde9ed43639c3b4c2ff1f5d4cc",
+              //   fit: BoxFit.contain,
+              // ),
+              child: OctoImage.fromSet(
+                image: NetworkImage(
+                  "https://bayut-production.s3.eu-central-1.amazonaws.com/image/183615390/901b83bde9ed43639c3b4c2ff1f5d4cc",
+                ),
+                fit: BoxFit.cover,
+                octoSet: OctoSet.blurHash('LEHV6nWB2yk8pyo0adR*.7kCMdnj'),
+              ),
+              // decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
             ),
           ),
           Padding(

@@ -11,31 +11,25 @@ class HousingGuideView extends GetView {
       backgroundColor: Color(0xffF1F4FF),
       appBar: AppBar(
         centerTitle: true,
-        title: Expanded(
-          child: Text(
-            "Our Suggestions",
-            style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
-          ),
+        title: Text(
+          "Our Suggestions",
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
         ),
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
       ),
-      body: SafeArea(
-        child: Column(
+      body: Container(
+        height: Get.height,
+        width: Get.width,
+        child: ListView(
+          //shrinkWrap: true,
+          ///physics: ClampingScrollPhysics(),
           children: [
-            Expanded(
-              child: ListView(
-                shrinkWrap: true,
-                physics: ClampingScrollPhysics(),
-                children: [
-                  listingCard(),
-                  listingCard(),
-                  listingCard(),
-                  listingCard(),
-                ],
-              ),
-            ),
+            listingCard(),
+            listingCard(),
+            listingCard(),
+            listingCard(),
           ],
         ),
       ),
