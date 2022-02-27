@@ -1,10 +1,6 @@
-// import '../flutter_flow/flutter_flow_drop_down.dart';
-// import '../flutter_flow/flutter_flow_icon_button.dart';
-// import '../flutter_flow/flutter_flow_theme.dart';
-// import '../flutter_flow/flutter_flow_util.dart';
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AcademicsHomeWidget extends GetView {
   // late String dropDownValue;
