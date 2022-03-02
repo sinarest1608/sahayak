@@ -1,6 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
 
 class AcademicsHomeWidget extends GetView {
   // late String dropDownValue;
@@ -107,6 +107,7 @@ class AcademicsHomeWidget extends GetView {
                         size: 30,
                       ),
                       onPressed: () {
+                        Get.back();
                         print('IconButton pressed ...');
                       },
                     ),
