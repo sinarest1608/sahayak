@@ -108,7 +108,6 @@ class AcademicsHomeWidget extends GetView {
                       ),
                       onPressed: () {
                         Get.back();
-                        print('IconButton pressed ...');
                       },
                     ),
                     Container(
