@@ -7,6 +7,7 @@ import 'package:sahayak_flutter/app/modules/home/views/academics_home_view.dart'
 import 'package:sahayak_flutter/app/modules/home/views/housing_guide_view.dart';
 
 class HomeView extends GetView<HomeController> {
+  final controller = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(

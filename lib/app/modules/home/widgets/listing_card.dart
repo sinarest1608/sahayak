@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:octo_image/octo_image.dart';
@@ -5,7 +7,8 @@ import 'package:sahayak_flutter/app/modules/home/views/listing_view.dart';
 
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-Widget listingCard() {
+Widget listingCard(String title, String price, String rentFreq, String url) {
+  log(title + rentFreq + price);
   return Padding(
     padding: const EdgeInsets.all(10.0),
     child: GestureDetector(
@@ -28,7 +31,7 @@ Widget listingCard() {
                 // ),
                 child: OctoImage.fromSet(
                   image: NetworkImage(
-                    "https://bayut-production.s3.eu-central-1.amazonaws.com/image/183615390/901b83bde9ed43639c3b4c2ff1f5d4cc",
+                    url,
                   ),
                   fit: BoxFit.cover,
                   octoSet: OctoSet.blurHash('LEHV6nWB2yk8pyo0adR*.7kCMdnj'),
@@ -41,12 +44,15 @@ Widget listingCard() {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Cozy Apartment 3x3",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  Expanded(
+                    child: Text(
+                      title,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
                   ),
                   Text(
-                    "\$350",
+                    "\$$price",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   )
                 ],
@@ -62,7 +68,7 @@ Widget listingCard() {
                     style: TextStyle(color: Colors.grey[600]),
                   ),
                   Text(
-                    "per month\n + utilities",
+                    "$rentFreq\n + utilities",
                     style: TextStyle(color: Colors.grey[600]),
                   )
                 ],
