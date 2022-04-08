@@ -24,8 +24,6 @@ class HomeController extends GetxController {
     //log(jsonResponse.toString());
     log(jsonResponse["hits"][0]["purpose"].toString());
     res.value = jsonResponse["hits"];
-
-    print(res);
   }
 
   @override

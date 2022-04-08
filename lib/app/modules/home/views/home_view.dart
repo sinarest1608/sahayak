@@ -23,8 +23,7 @@ class HomeView extends GetView<HomeController> {
         ),
         body: Padding(
           padding: const EdgeInsets.only(left: 18, bottom: 18, right: 18),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
