@@ -32,7 +32,8 @@ class HousingGuideView extends GetView {
             height: Get.height,
             width: Get.width,
             child: controller.res.length == 0
-                ? CircularProgressIndicator()
+                ? Container(
+                    height: 20, width: 20, child: CircularProgressIndicator())
                 : ListView.builder(
                     //shrinkWrap: true,
                     ///physics: ClampingScrollPhysics(),
