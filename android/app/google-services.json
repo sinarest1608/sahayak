@@ -22,6 +22,22 @@
           }
         },
         {
+          "client_id": "736217537770-bu3184c8l6b5i1hjjh5arsefuddrd8tf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hci.sahayak_flutter",
+            "certificate_hash": "30bae061d1ac0a9a9195e0f6c123c7dc7aed9e1d"
+          }
+        },
+        {
+          "client_id": "736217537770-uoes02j9d4a23jv82oobjgvtpu5dp3tt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hci.sahayak_flutter",
+            "certificate_hash": "ab3c2427fd0d884f9c24c499ecbc7c13688abf28"
+          }
+        },
+        {
           "client_id": "736217537770-v54shnssn1ohfcnkhu08tvvqu21ftv4g.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
