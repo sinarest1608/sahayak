@@ -1,5 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'dart:ui';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,15 +20,16 @@ class HomeView extends GetView<HomeController> {
         child: GestureDetector(
           onTap: () {
             Get.defaultDialog(
-                title: "Event Name",
-                middleText: "Details",
+                title: "Gator Carnival",
+                middleText:
+                    "We are excited to announce that our 'Gator Carnival' event will be taking place at the Reitz Union on April 8th from 6:00 PM to 10:00 PM.\n The event check-in station will be located at the Outdoor Tabling Area. GatorNights is free for all current UF students with a valid Gator 1 Card. There are no guests allowed at this week's event.",
                 actions: [
                   TextButton(
                       onPressed: () {
                         Get.back();
                       },
-                      child: Text('No')),
-                  TextButton(onPressed: () {}, child: Text('Yes')),
+                      child: Text('Nay')),
+                  TextButton(onPressed: () {}, child: Text('Yayy!')),
                 ]);
           },
           child: Container(
@@ -47,15 +50,16 @@ class HomeView extends GetView<HomeController> {
         child: GestureDetector(
           onTap: () {
             Get.defaultDialog(
-                title: "Event Name",
-                middleText: "Details",
+                title: "Gator Giggles",
+                middleText:
+                    "You’d be a fool to miss these silly events🤪 \n @ufgatordays and @ufgatornights have a fun switcheroo planned for you on April Fools Day!\n GatorNights will take place when the sun is out to play, and GatorDays after dark will make its debut☀️🌙",
                 actions: [
                   TextButton(
                       onPressed: () {
                         Get.back();
                       },
-                      child: Text('No')),
-                  TextButton(onPressed: () {}, child: Text('Yes')),
+                      child: Text('Nay')),
+                  TextButton(onPressed: () {}, child: Text('Yayy!')),
                 ]);
           },
           child: Container(
@@ -76,15 +80,16 @@ class HomeView extends GetView<HomeController> {
         child: GestureDetector(
           onTap: () {
             Get.defaultDialog(
-                title: "Event Name",
-                middleText: "Details",
+                title: "Gator Gala",
+                middleText:
+                    "This week the whole place will be dressed to the nines and we'll be dancing like we’re made of starlight. 💃🕺\n We are excited to announce that 'Gator Gala' will be taking place at the Reitz Union on January 28th from 7:00 PM to 11:00 PM. We encourage you to come dressed in your best attire or to come as you are.",
                 actions: [
                   TextButton(
                       onPressed: () {
                         Get.back();
                       },
-                      child: Text('No')),
-                  TextButton(onPressed: () {}, child: Text('Yes')),
+                      child: Text('Nay')),
+                  TextButton(onPressed: () {}, child: Text('Yayy!')),
                 ]);
           },
           child: Container(
