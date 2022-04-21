@@ -211,7 +211,9 @@ class AcademicsHomeWidget extends GetView {
                                 'About Professors',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
                                 // style: FlutterFlowTheme.of(context)
                                 //     .bodyText1
                                 //     .override(
