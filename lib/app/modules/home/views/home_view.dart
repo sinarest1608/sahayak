@@ -12,7 +12,47 @@ class HomeView extends GetView<HomeController> {
   final controller = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
-    List<Widget> items = [];
+    List<Widget> items = [
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 1),
+        child: Container(
+          width: Get.width,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Color(0xff96bbff).withOpacity(0.7),
+          ),
+          child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.asset('assets/image/01.jpg', fit: BoxFit.fitHeight)),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 1),
+        child: Container(
+          width: Get.width,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Color(0xff96bbff).withOpacity(0.7),
+          ),
+          child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.asset('assets/image/02.jpg', fit: BoxFit.fitHeight)),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 1),
+        child: Container(
+          width: Get.width,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Color(0xff96bbff).withOpacity(0.7),
+          ),
+          child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.asset('assets/image/03.jpg', fit: BoxFit.fitHeight)),
+        ),
+      ),
+    ];
     final CarouselController _controller = CarouselController();
     return Scaffold(
         backgroundColor: Color(0xffF1F4FF),
@@ -53,36 +93,12 @@ class HomeView extends GetView<HomeController> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
-              // CarouselSlider(
-              //   options: CarouselOptions(
-              //     height: 165,
-              //     autoPlay: true,
-              //   ),
-              //   items: [1, 2, 3, 4, 5].map((i) {
-              //     return Builder(
-              //       builder: (BuildContext context) {
-              //         return Padding(
-              //           padding: const EdgeInsets.symmetric(horizontal: 1),
-              //           child: Container(
-              //             width: Get.width,
-              //             height: 165,
-              //             decoration: BoxDecoration(
-              //               borderRadius: BorderRadius.circular(15),
-              //               color: Color(0xff96bbff).withOpacity(0.7),
-              //             ),
-              //           ),
-              //         );
-              //       },
-              //     );
-              //   }).toList(),
-              // ),
-
               CarouselSlider(
                   carouselController: _controller,
                   items: items,
                   options: CarouselOptions(
-                    height: 165,
-                    aspectRatio: 2.0,
+                    height: 215,
+                    aspectRatio: 1.0,
                     viewportFraction: 1.0,
                     initialPage: 0,
                     enableInfiniteScroll: true,
@@ -123,28 +139,43 @@ class HomeView extends GetView<HomeController> {
                       ),
                     ],
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "🏫",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                  child: Stack(
+                    children: [
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(
+                            'assets/image/acad.jpg',
+                            fit: BoxFit.cover,
+                            width: Get.width,
+                            color: Colors.black.withOpacity(0.5),
+                            colorBlendMode: BlendMode.darken,
+                          )),
+                      Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "🏫",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Text(
+                                "Academics\nGuide",
+                                textAlign: TextAlign.right,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
                         ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Text(
-                            "Academics\nGuide",
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -170,28 +201,43 @@ class HomeView extends GetView<HomeController> {
                       ),
                     ],
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "🏡",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                  child: Stack(
+                    children: [
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(
+                            'assets/image/housing.jpg',
+                            fit: BoxFit.cover,
+                            width: Get.width,
+                            color: Colors.black.withOpacity(0.35),
+                            colorBlendMode: BlendMode.darken,
+                          )),
+                      Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "🏡",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Text(
+                                "Housing\nGuide",
+                                textAlign: TextAlign.right,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
                         ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Text(
-                            "Housing\nGuide",
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
