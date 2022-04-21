@@ -15,41 +15,89 @@ class HomeView extends GetView<HomeController> {
     List<Widget> items = [
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 1),
-        child: Container(
-          width: Get.width,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Color(0xff96bbff).withOpacity(0.7),
-          ),
-          child: ClipRRect(
+        child: GestureDetector(
+          onTap: () {
+            Get.defaultDialog(
+                title: "Event Name",
+                middleText: "Details",
+                actions: [
+                  TextButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      child: Text('No')),
+                  TextButton(onPressed: () {}, child: Text('Yes')),
+                ]);
+          },
+          child: Container(
+            width: Get.width,
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              child: Image.asset('assets/image/01.jpg', fit: BoxFit.fitHeight)),
+              color: Color(0xff96bbff).withOpacity(0.7),
+            ),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child:
+                    Image.asset('assets/image/01.jpg', fit: BoxFit.fitHeight)),
+          ),
         ),
       ),
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 1),
-        child: Container(
-          width: Get.width,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Color(0xff96bbff).withOpacity(0.7),
-          ),
-          child: ClipRRect(
+        child: GestureDetector(
+          onTap: () {
+            Get.defaultDialog(
+                title: "Event Name",
+                middleText: "Details",
+                actions: [
+                  TextButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      child: Text('No')),
+                  TextButton(onPressed: () {}, child: Text('Yes')),
+                ]);
+          },
+          child: Container(
+            width: Get.width,
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              child: Image.asset('assets/image/02.jpg', fit: BoxFit.fitHeight)),
+              color: Color(0xff96bbff).withOpacity(0.7),
+            ),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child:
+                    Image.asset('assets/image/02.jpg', fit: BoxFit.fitHeight)),
+          ),
         ),
       ),
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 1),
-        child: Container(
-          width: Get.width,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Color(0xff96bbff).withOpacity(0.7),
-          ),
-          child: ClipRRect(
+        child: GestureDetector(
+          onTap: () {
+            Get.defaultDialog(
+                title: "Event Name",
+                middleText: "Details",
+                actions: [
+                  TextButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      child: Text('No')),
+                  TextButton(onPressed: () {}, child: Text('Yes')),
+                ]);
+          },
+          child: Container(
+            width: Get.width,
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              child: Image.asset('assets/image/03.jpg', fit: BoxFit.fitHeight)),
+              color: Color(0xff96bbff).withOpacity(0.7),
+            ),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child:
+                    Image.asset('assets/image/03.jpg', fit: BoxFit.fitHeight)),
+          ),
         ),
       ),
     ];
