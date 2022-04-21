@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sahayak_flutter/app/modules/home/controllers/home_controller.dart';
@@ -44,21 +45,25 @@ class HomeView extends GetView<HomeController> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
-              Container(
-                width: Get.width,
-                height: 165,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Color(0xff96bbff).withOpacity(0.7),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
-                      spreadRadius: 6,
-                      blurRadius: 10,
-                      offset: Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
+              CarouselSlider(
+                options: CarouselOptions(height: 165),
+                items: [1, 2, 3, 4, 5].map((i) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 1),
+                        child: Container(
+                          width: Get.width,
+                          height: 165,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color(0xff96bbff).withOpacity(0.7),
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                }).toList(),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 15.0),
