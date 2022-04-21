@@ -6,11 +6,14 @@ import 'package:get/get.dart';
 import 'package:sahayak_flutter/app/modules/home/controllers/home_controller.dart';
 import 'package:sahayak_flutter/app/modules/home/views/academics_home_view.dart';
 import 'package:sahayak_flutter/app/modules/home/views/housing_guide_view.dart';
+import 'package:sahayak_flutter/app/utils/google_signin.dart';
 
 class HomeView extends GetView<HomeController> {
   final controller = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
+    List<Widget> items = [];
+    final CarouselController _controller = CarouselController();
     return Scaffold(
         backgroundColor: Color(0xffF1F4FF),
         appBar: AppBar(
@@ -33,8 +36,13 @@ class HomeView extends GetView<HomeController> {
                     "Greetings,\nRajdev Kapoor",
                     style: TextStyle(fontSize: 20),
                   ),
-                  CircleAvatar(
-                    backgroundColor: Colors.red,
+                  GestureDetector(
+                    onTap: () async {
+                      await signInWithGoogle();
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: Colors.red,
+                    ),
                   )
                 ],
               ),
@@ -45,26 +53,50 @@ class HomeView extends GetView<HomeController> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
+              // CarouselSlider(
+              //   options: CarouselOptions(
+              //     height: 165,
+              //     autoPlay: true,
+              //   ),
+              //   items: [1, 2, 3, 4, 5].map((i) {
+              //     return Builder(
+              //       builder: (BuildContext context) {
+              //         return Padding(
+              //           padding: const EdgeInsets.symmetric(horizontal: 1),
+              //           child: Container(
+              //             width: Get.width,
+              //             height: 165,
+              //             decoration: BoxDecoration(
+              //               borderRadius: BorderRadius.circular(15),
+              //               color: Color(0xff96bbff).withOpacity(0.7),
+              //             ),
+              //           ),
+              //         );
+              //       },
+              //     );
+              //   }).toList(),
+              // ),
+
               CarouselSlider(
-                options: CarouselOptions(height: 165),
-                items: [1, 2, 3, 4, 5].map((i) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 1),
-                        child: Container(
-                          width: Get.width,
-                          height: 165,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Color(0xff96bbff).withOpacity(0.7),
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                }).toList(),
-              ),
+                  carouselController: _controller,
+                  items: items,
+                  options: CarouselOptions(
+                    height: 165,
+                    aspectRatio: 2.0,
+                    viewportFraction: 1.0,
+                    initialPage: 0,
+                    enableInfiniteScroll: true,
+                    reverse: false,
+                    autoPlay: true,
+                    autoPlayInterval: Duration(seconds: 3),
+                    autoPlayAnimationDuration: Duration(milliseconds: 800),
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                    enlargeCenterPage: false,
+                    //onPageChanged: callbackFunction,
+                    scrollDirection: Axis.horizontal,
+                    pageSnapping: true,
+                    disableCenter: false,
+                  )),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 15.0),
                 child: Text(

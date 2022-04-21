@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "736217537770",
+    "project_id": "sahayak-cedec",
+    "storage_bucket": "sahayak-cedec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736217537770:android:34f24f7af1e6af15af0b93",
+        "android_client_info": {
+          "package_name": "com.hci.sahayak_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736217537770-8ell9n5vbbdrr3rln7avqki00pcvo048.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hci.sahayak_flutter",
+            "certificate_hash": "a1cc86a886053bae6e9bea136686bd035410569a"
+          }
+        },
+        {
+          "client_id": "736217537770-v54shnssn1ohfcnkhu08tvvqu21ftv4g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hci.sahayak_flutter",
+            "certificate_hash": "3336bbfa6aec779ba6ba375f8179a1fe5ac2c49a"
+          }
+        },
+        {
+          "client_id": "736217537770-3qf8i3onpkdus0emj9acjf9ms9dia25d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMzpNA99x3gygK0iwG6croA60WjU_9Hzw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736217537770-3qf8i3onpkdus0emj9acjf9ms9dia25d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
