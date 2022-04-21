@@ -1,13 +1,18 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+
+import 'package:sahayak_flutter/app/data/models/user_model.dart';
+import 'package:sahayak_flutter/app/modules/home/utils/hiveOps.dart';
 
 class HomeController extends GetxController {
   final count = 0.obs;
 
   RxList res = [].obs;
+  Rx<UserModel?> userData = Rx<UserModel?>(null);
   // runF() async {
   //   res = await controller.getProperties();
   // }
@@ -24,6 +29,12 @@ class HomeController extends GetxController {
     //log(jsonResponse.toString());
     log(jsonResponse["hits"][0]["purpose"].toString());
     res.value = jsonResponse["hits"];
+  }
+
+  getUserDataFromHive() async {
+    Box? userBox = await HiveOps.openBox("userData");
+
+    // userBox.put(, value)
   }
 
   @override
