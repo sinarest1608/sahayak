@@ -126,24 +126,11 @@ class AcademicsHomeWidget extends GetView {
                       color: Color(0xFFEFD2C8),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            'Stream',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
-                          ),
-                          Row(
-                            children: [
-                              Text('Select an option'),
-                              Icon(Icons.arrow_drop_down),
-                            ],
-                          ),
-                        ],
+                    child: Center(
+                      child: Text(
+                        'Select Fall 22 Course and Join the Group',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
                       ),
                     ),
                   ),
@@ -158,12 +145,12 @@ class AcademicsHomeWidget extends GetView {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    buildCourseRow('Course 1'),
-                    buildCourseRow('Course 2'),
-                    buildCourseRow('Course 3'),
-                    buildCourseRow('Course 4'),
-                    buildCourseRow('Course 5'),
-                    buildCourseRow('Course 6'),
+                    buildCourseRow('COT5405'),
+                    buildCourseRow('CIS4301'),
+                    buildCourseRow('CEN5035'),
+                    buildCourseRow('CAP5100'),
+                    buildCourseRow('C0T5480'),
+                    buildCourseRow('CES3213'),
                     GestureDetector(
                       onTap: () {
                         Get.to(() => AboutProfessors());
