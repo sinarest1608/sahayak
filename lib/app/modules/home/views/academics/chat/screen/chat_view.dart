@@ -6,6 +6,10 @@ import 'package:sahayak_flutter/app/modules/home/views/academics/chat/widgets/me
 import 'package:sahayak_flutter/app/modules/home/views/academics/chat/widgets/new_message.dart';
 
 class ChatScreen extends StatefulWidget {
+  final String title;
+
+  ChatScreen(this.title);
+
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
@@ -49,7 +53,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     height: 30,
                     decoration: BoxDecoration(),
                     child: Text(
-                      'Forum ',
+                      widget.title,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 24,

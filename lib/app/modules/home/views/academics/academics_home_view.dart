@@ -39,19 +39,24 @@ class AcademicsHomeWidget extends GetView {
               children: [
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
-                  child: Text(
-                    'Join',
-                    style: TextStyle(
-                      fontSize: 16,
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.to(() => ChatScreen(courseName));
+                    },
+                    child: Text(
+                      'Join',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                      // style: FlutterFlowTheme.of(context)
+                      //     .bodyText1
+                      //     .override(
+                      //       fontFamily: 'Poppins',
+                      //       color: Colors.black,
+                      //       fontSize: 18,
+                      //       fontWeight: FontWeight.normal,
+                      //     ),
                     ),
-                    // style: FlutterFlowTheme.of(context)
-                    //     .bodyText1
-                    //     .override(
-                    //       fontFamily: 'Poppins',
-                    //       color: Colors.black,
-                    //       fontSize: 18,
-                    //       fontWeight: FontWeight.normal,
-                    //     ),
                   ),
                 ),
                 SizedBox(
@@ -230,7 +235,7 @@ class AcademicsHomeWidget extends GetView {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Get.to(() => ChatScreen());
+                          Get.to(() => ChatScreen('Stream Forum'));
                         },
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
