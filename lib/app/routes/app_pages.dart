@@ -1,5 +1,5 @@
-import 'package:Sahayak/app/modules/home/views/home_view.dart';
-import 'package:Sahayak/app/modules/home/bindings/home_binding.dart';
+import 'package:sahayak/app/modules/home/views/home_view.dart';
+import 'package:sahayak/app/modules/home/bindings/home_binding.dart';
 import 'package:get/get.dart';
 part 'app_routes.dart';
 

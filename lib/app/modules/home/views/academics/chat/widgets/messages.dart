@@ -2,7 +2,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:Sahayak/app/modules/home/views/academics/chat/widgets/message_bubble.dart';
+import 'package:sahayak/app/modules/home/views/academics/chat/widgets/message_bubble.dart';
 
 class Messages extends StatefulWidget {
   @override
