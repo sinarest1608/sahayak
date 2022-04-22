@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:octo_image/octo_image.dart';
-import 'package:sahayak_flutter/app/modules/home/views/listing_view.dart';
+import 'package:Sahayak/app/modules/home/views/listing_view.dart';
 
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors
 

@@ -5,10 +5,10 @@ import 'dart:ui';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sahayak_flutter/app/modules/home/controllers/home_controller.dart';
-import 'package:sahayak_flutter/app/modules/home/views/academics/academics_home_view.dart';
-import 'package:sahayak_flutter/app/modules/home/views/housing_guide_view.dart';
-import 'package:sahayak_flutter/app/utils/google_signin.dart';
+import 'package:Sahayak/app/modules/home/controllers/home_controller.dart';
+import 'package:Sahayak/app/modules/home/views/academics/academics_home_view.dart';
+import 'package:Sahayak/app/modules/home/views/housing_guide_view.dart';
+import 'package:Sahayak/app/utils/google_signin.dart';
 
 class HomeView extends GetView<HomeController> {
   final controller = Get.put(HomeController());

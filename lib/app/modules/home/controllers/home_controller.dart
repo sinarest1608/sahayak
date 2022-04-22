@@ -5,8 +5,8 @@ import 'package:hive/hive.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:sahayak_flutter/app/data/models/user_model.dart';
-import 'package:sahayak_flutter/app/modules/home/utils/hiveOps.dart';
+import 'package:Sahayak/app/data/models/user_model.dart';
+import 'package:Sahayak/app/modules/home/utils/hiveOps.dart';
 
 class HomeController extends GetxController {
   final count = 0.obs;

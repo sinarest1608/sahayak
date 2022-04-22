@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:sahayak_flutter/app/modules/home/utils/hiveOps.dart';
+import 'package:Sahayak/app/modules/home/utils/hiveOps.dart';
 
 import '../modules/home/utils/firebaseOps.dart';
 

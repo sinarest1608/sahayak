@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:sahayak_flutter/app/modules/home/views/academics/chat/widgets/messages.dart';
-import 'package:sahayak_flutter/app/modules/home/views/academics/chat/widgets/new_message.dart';
+import 'package:Sahayak/app/modules/home/views/academics/chat/widgets/messages.dart';
+import 'package:Sahayak/app/modules/home/views/academics/chat/widgets/new_message.dart';
 
 class ChatScreen extends StatefulWidget {
   final String title;
