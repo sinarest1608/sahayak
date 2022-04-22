@@ -47,36 +47,10 @@ class AcademicsHomeWidget extends GetView {
                     child: Text(
                       'Join',
                       style: TextStyle(
-                        fontSize: 16,
-                      ),
-                      // style: FlutterFlowTheme.of(context)
-                      //     .bodyText1
-                      //     .override(
-                      //       fontFamily: 'Poppins',
-                      //       color: Colors.black,
-                      //       fontSize: 18,
-                      //       fontWeight: FontWeight.normal,
-                      //     ),
+                          color: Color.fromARGB(255, 1, 91, 6),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  width: 30,
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
-                  child: Text(
-                    'View',
-                    style: TextStyle(color: Colors.grey, fontSize: 16),
-                    // style: FlutterFlowTheme.of(context)
-                    //     .bodyText1
-                    //     .override(
-                    //       fontFamily: 'Poppins',
-                    //       color: FlutterFlowTheme.of(context)
-                    //           .secondaryText,
-                    //       fontSize: 18,
-                    //       fontWeight: FontWeight.w300,
-                    //     ),
                   ),
                 ),
               ],
@@ -138,7 +112,7 @@ class AcademicsHomeWidget extends GetView {
                 ],
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                padding: const EdgeInsets.all(14),
                 child: Material(
                   color: Colors.transparent,
                   elevation: 8,
@@ -162,11 +136,6 @@ class AcademicsHomeWidget extends GetView {
                             'Stream',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 16),
-                            // style:
-                            //     FlutterFlowTheme.of(context).bodyText1.override(
-                            //           fontFamily: 'Poppins',
-                            //           fontWeight: FontWeight.w500,
-                            //         ),
                           ),
                           Row(
                             children: [
@@ -200,81 +169,100 @@ class AcademicsHomeWidget extends GetView {
                         Get.to(() => AboutProfessors());
                       },
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 12,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 80,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFACB5E9),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                              child: Text(
-                                'About Professors',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                ),
-                                // style: FlutterFlowTheme.of(context)
-                                //     .bodyText1
-                                //     .override(
-                                //       fontFamily: 'Poppins',
-                                //       color: Colors.black,
-                                //       fontSize: 24,
-                                //       fontWeight: FontWeight.w300,
-                                //     ),
+                        padding: const EdgeInsets.symmetric(horizontal: 14),
+                        child: Container(
+                          width: Get.width,
+                          height: 157,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color(0xffe8eaff).withOpacity(0.7),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.4),
+                                spreadRadius: 3,
+                                blurRadius: 7,
+                                offset:
+                                    Offset(0, 3), // changes position of shadow
                               ),
-                            ),
+                            ],
+                          ),
+                          child: Stack(
+                            children: [
+                              ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Image.asset(
+                                    'assets/image/prof.jpg',
+                                    fit: BoxFit.cover,
+                                    width: Get.width,
+                                    color: Colors.black.withOpacity(0.5),
+                                    colorBlendMode: BlendMode.darken,
+                                  )),
+                              Container(
+                                child: Center(
+                                  child: Text(
+                                    "About Professors",
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 20,
                     ),
                     GestureDetector(
                       onTap: () {
                         Get.to(() => ChatScreen('Stream Forum'));
                       },
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 12,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 80,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFACB5E9),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                              child: Text(
-                                'Stream Forum',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20),
-                                // style: FlutterFlowTheme.of(context)
-                                //     .bodyText1
-                                //     .override(
-                                //       fontFamily: 'Poppins',
-                                //       color: Colors.black,
-                                //       fontSize: 24,
-                                //       fontWeight: FontWeight.w300,
-                                //     ),
+                        padding: const EdgeInsets.symmetric(horizontal: 14),
+                        child: Container(
+                          width: Get.width,
+                          height: 157,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color(0xfffee8eb),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.4),
+                                spreadRadius: 3,
+                                blurRadius: 7,
+                                offset:
+                                    Offset(0, 3), // changes position of shadow
                               ),
-                            ),
+                            ],
+                          ),
+                          child: Stack(
+                            children: [
+                              ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Image.asset(
+                                    'assets/image/chat.jpg',
+                                    fit: BoxFit.cover,
+                                    width: Get.width,
+                                    color: Colors.black.withOpacity(0.35),
+                                    colorBlendMode: BlendMode.darken,
+                                  )),
+                              Container(
+                                child: Center(
+                                  child: Text(
+                                    "Stream Forum",
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
