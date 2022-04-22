@@ -37,9 +37,9 @@ class _AboutProfessorsState extends State<AboutProfessors> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
           children: [
             Row(
               mainAxisSize: MainAxisSize.max,

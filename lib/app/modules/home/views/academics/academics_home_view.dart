@@ -89,203 +89,200 @@ class AcademicsHomeWidget extends GetView {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: Color(0xFFF5F5F5),
-        body: SafeArea(
-          child: GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    IconButton(
-                      // borderColor: Colors.transparent,
-                      // borderRadius: 30,
-                      // borderWidth: 1,
-                      // buttonSize: 60,
-                      icon: Icon(
-                        Icons.chevron_left,
-                        color: Colors.black,
-                        size: 30,
-                      ),
-                      onPressed: () {
-                        Get.back();
-                      },
+    return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: Color(0xffF1F4FF),
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  IconButton(
+                    // borderColor: Colors.transparent,
+                    // borderRadius: 30,
+                    // borderWidth: 1,
+                    // buttonSize: 60,
+                    icon: Icon(
+                      Icons.chevron_left,
+                      color: Colors.black,
+                      size: 30,
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.7,
-                      height: 30,
-                      decoration: BoxDecoration(),
-                      child: Text(
-                        'Academics ',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
+                    onPressed: () {
+                      Get.back();
+                    },
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    height: 30,
+                    decoration: BoxDecoration(),
+                    child: Text(
+                      'Academics ',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      // style: FlutterFlowTheme.of(context).bodyText1.override(
+                      //       fontFamily: 'Poppins',
+                      //       color: Colors.black,
+                      //       fontSize: 24,
+                      //       fontWeight: FontWeight.normal,
+                      //     ),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                child: Material(
+                  color: Colors.transparent,
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEFD2C8),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            'Stream',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                            // style:
+                            //     FlutterFlowTheme.of(context).bodyText1.override(
+                            //           fontFamily: 'Poppins',
+                            //           fontWeight: FontWeight.w500,
+                            //         ),
+                          ),
+                          Row(
+                            children: [
+                              Text('Select an option'),
+                              Icon(Icons.arrow_drop_down),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.75,
+                decoration: BoxDecoration(
+                  color: Color(0xFFEEEEEE),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    buildCourseRow('Course 1'),
+                    buildCourseRow('Course 2'),
+                    buildCourseRow('Course 3'),
+                    buildCourseRow('Course 4'),
+                    buildCourseRow('Course 5'),
+                    buildCourseRow('Course 6'),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => AboutProfessors());
+                      },
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                        child: Material(
+                          color: Colors.transparent,
+                          elevation: 12,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFACB5E9),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                              child: Text(
+                                'About Professors',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                                // style: FlutterFlowTheme.of(context)
+                                //     .bodyText1
+                                //     .override(
+                                //       fontFamily: 'Poppins',
+                                //       color: Colors.black,
+                                //       fontSize: 24,
+                                //       fontWeight: FontWeight.w300,
+                                //     ),
+                              ),
+                            ),
+                          ),
                         ),
-                        // style: FlutterFlowTheme.of(context).bodyText1.override(
-                        //       fontFamily: 'Poppins',
-                        //       color: Colors.black,
-                        //       fontSize: 24,
-                        //       fontWeight: FontWeight.normal,
-                        //     ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => ChatScreen('Stream Forum'));
+                      },
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                        child: Material(
+                          color: Colors.transparent,
+                          elevation: 12,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFACB5E9),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                              child: Text(
+                                'Stream Forum',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20),
+                                // style: FlutterFlowTheme.of(context)
+                                //     .bodyText1
+                                //     .override(
+                                //       fontFamily: 'Poppins',
+                                //       color: Colors.black,
+                                //       fontSize: 24,
+                                //       fontWeight: FontWeight.w300,
+                                //     ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ],
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                  child: Material(
-                    color: Colors.transparent,
-                    elevation: 8,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFEFD2C8),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              'Stream',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
-                              // style:
-                              //     FlutterFlowTheme.of(context).bodyText1.override(
-                              //           fontFamily: 'Poppins',
-                              //           fontWeight: FontWeight.w500,
-                              //         ),
-                            ),
-                            Row(
-                              children: [
-                                Text('Select an option'),
-                                Icon(Icons.arrow_drop_down),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.75,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFEEEEEE),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      buildCourseRow('Course 1'),
-                      buildCourseRow('Course 2'),
-                      buildCourseRow('Course 3'),
-                      buildCourseRow('Course 4'),
-                      buildCourseRow('Course 5'),
-                      buildCourseRow('Course 6'),
-                      GestureDetector(
-                        onTap: () {
-                          Get.to(() => AboutProfessors());
-                        },
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                          child: Material(
-                            color: Colors.transparent,
-                            elevation: 12,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFACB5E9),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                                child: Text(
-                                  'About Professors',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
-                                  ),
-                                  // style: FlutterFlowTheme.of(context)
-                                  //     .bodyText1
-                                  //     .override(
-                                  //       fontFamily: 'Poppins',
-                                  //       color: Colors.black,
-                                  //       fontSize: 24,
-                                  //       fontWeight: FontWeight.w300,
-                                  //     ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Get.to(() => ChatScreen('Stream Forum'));
-                        },
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                          child: Material(
-                            color: Colors.transparent,
-                            elevation: 12,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFACB5E9),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                                child: Text(
-                                  'Stream Forum',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20),
-                                  // style: FlutterFlowTheme.of(context)
-                                  //     .bodyText1
-                                  //     .override(
-                                  //       fontFamily: 'Poppins',
-                                  //       color: Colors.black,
-                                  //       fontSize: 24,
-                                  //       fontWeight: FontWeight.w300,
-                                  //     ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
