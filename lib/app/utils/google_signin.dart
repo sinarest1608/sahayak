@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:sahayak_flutter/app/modules/home/utils/hiveOps.dart';
 
 import '../modules/home/utils/firebaseOps.dart';
 
@@ -25,6 +26,14 @@ Future<UserCredential> signInWithGoogle() async {
       .then((value) async {
     if (!(await checkIfDocumentExists('users/${value.user!.email}'))) {
       await writeToFirestore('users/${value.user!.email}', {
+        "name": googleUser.displayName,
+        "email": googleUser.email,
+        "uid": value.user!.uid,
+        "imgUrl": value.user!.photoURL,
+        "phoneNumber": "",
+      });
+      await HiveOps.openBox("userData");
+      await HiveOps.putHiveBoxData("userData", googleUser.email, {
         "name": googleUser.displayName,
         "email": googleUser.email,
         "uid": value.user!.uid,
