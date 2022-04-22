@@ -38,6 +38,7 @@ class _AboutProfessorsState extends State<AboutProfessors> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffF1F4FF),
       body: SafeArea(
         child: Column(
           children: [
@@ -82,16 +83,26 @@ class _AboutProfessorsState extends State<AboutProfessors> {
                       itemBuilder: (context, index) {
                         return _items[index]["tDept"] == "Engineering"
                             ? Card(
-                                margin: const EdgeInsets.all(10),
+                                elevation: 4,
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 14, vertical: 8),
                                 child: ListTile(
-                                  leading:
-                                      Text(_items[index]["tid"].toString()),
-                                  title: Text(_items[index]["tFname"] +
-                                      " " +
-                                      _items[index]["tLname"]),
-                                  subtitle: Text("Rating: " +
-                                      _items[index]["overall_rating"]
-                                          .toString()),
+                                  title: Text(
+                                    _items[index]["tFname"] +
+                                        " " +
+                                        _items[index]["tLname"],
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  trailing: Text(
+                                    "Rating: " +
+                                        _items[index]["overall_rating"] +
+                                        "/5.0".toString(),
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        color:
+                                            Color.fromARGB(255, 226, 177, 29)),
+                                  ),
                                 ))
                             : Container();
                       },
