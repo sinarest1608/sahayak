@@ -128,7 +128,7 @@ class HomeView extends GetView<HomeController> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Greetings,\n${FirebaseAuth.instance.currentUser!.displayName}",
+                    "Greetings,\n${FirebaseAuth.instance.currentUser == null ? "User" : FirebaseAuth.instance.currentUser!.displayName}",
                     style: TextStyle(fontSize: 20),
                   ),
                   GestureDetector(
@@ -136,8 +136,11 @@ class HomeView extends GetView<HomeController> {
                       await signInWithGoogle();
                     },
                     child: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          FirebaseAuth.instance.currentUser!.photoURL!),
+                      backgroundImage: NetworkImage(FirebaseAuth
+                                  .instance.currentUser ==
+                              null
+                          ? "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png"
+                          : FirebaseAuth.instance.currentUser!.photoURL!),
                       backgroundColor: Colors.transparent,
                     ),
                   )
