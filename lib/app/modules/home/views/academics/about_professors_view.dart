@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 
 class AboutProfessors extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class AboutProfessors extends StatefulWidget {
 class _AboutProfessorsState extends State<AboutProfessors> {
   var _isLoading = false;
   List _items = [];
-
+  RxString _searchText = "".obs;
   @override
   void initState() {
     super.initState();
@@ -37,6 +38,7 @@ class _AboutProfessorsState extends State<AboutProfessors> {
 
   @override
   Widget build(BuildContext context) {
+    print(_items.length);
     return Scaffold(
       backgroundColor: Color(0xffF1F4FF),
       body: SafeArea(
@@ -71,6 +73,11 @@ class _AboutProfessorsState extends State<AboutProfessors> {
                 ),
               ],
             ),
+            // TextField(
+            //   onChanged: (val) {
+            //     _searchText.value = val;
+            //   },
+            // ),
             _isLoading
                 ? Expanded(
                     child: Center(
@@ -79,9 +86,11 @@ class _AboutProfessorsState extends State<AboutProfessors> {
                   )
                 : Expanded(
                     child: ListView.builder(
-                      itemCount: _items.length,
+                      itemCount: 1000,
                       itemBuilder: (context, index) {
-                        return _items[index]["tDept"] == "Engineering"
+                        print(_searchText.value);
+                        return (_items[index]["tDept"] == "Engineering" &&
+                                _items[index]["overall_rating"] != "N/A")
                             ? Card(
                                 elevation: 4,
                                 margin: const EdgeInsets.symmetric(
@@ -94,15 +103,45 @@ class _AboutProfessorsState extends State<AboutProfessors> {
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
-                                  trailing: Text(
-                                    "Rating: " +
-                                        _items[index]["overall_rating"] +
-                                        "/5.0".toString(),
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        color:
-                                            Color.fromARGB(255, 226, 177, 29)),
+                                  trailing: RatingStars(
+                                    value: double.parse(
+                                        _items[index]["overall_rating"]),
+                                    starBuilder: (index, color) => Icon(
+                                      Icons.star,
+                                      color: color,
+                                    ),
+                                    starCount: 5,
+                                    starSize: 20,
+                                    valueLabelColor: const Color(0xff9b9b9b),
+                                    valueLabelTextStyle: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w400,
+                                        fontStyle: FontStyle.normal,
+                                        fontSize: 12.0),
+                                    valueLabelRadius: 10,
+                                    maxValue: 5,
+                                    starSpacing: 2,
+                                    maxValueVisibility: true,
+                                    valueLabelVisibility: true,
+                                    animationDuration:
+                                        Duration(milliseconds: 1000),
+                                    valueLabelPadding:
+                                        const EdgeInsets.symmetric(
+                                            vertical: 1, horizontal: 8),
+                                    valueLabelMargin:
+                                        const EdgeInsets.only(right: 8),
+                                    starOffColor: const Color(0xffe7e8ea),
+                                    starColor: Colors.yellow,
                                   ),
+                                  // trailing: Text(
+                                  //   "Rating: " +
+                                  //       _items[index]["overall_rating"] +
+                                  //       "/5.0".toString(),
+                                  //   style: TextStyle(
+                                  //       fontWeight: FontWeight.w500,
+                                  //       color:
+                                  //           Color.fromARGB(255, 226, 177, 29)),
+                                  // ),
                                 ))
                             : Container();
                       },
