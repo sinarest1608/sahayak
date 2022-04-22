@@ -3,12 +3,14 @@
 import 'dart:ui';
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:Sahayak/app/modules/home/controllers/home_controller.dart';
 import 'package:Sahayak/app/modules/home/views/academics/academics_home_view.dart';
 import 'package:Sahayak/app/modules/home/views/housing_guide_view.dart';
 import 'package:Sahayak/app/utils/google_signin.dart';
+import 'package:octo_image/octo_image.dart';
 
 class HomeView extends GetView<HomeController> {
   final controller = Get.put(HomeController());
@@ -126,7 +128,7 @@ class HomeView extends GetView<HomeController> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Greetings,\nRajdev Kapoor",
+                    "Greetings,\n${FirebaseAuth.instance.currentUser!.displayName}",
                     style: TextStyle(fontSize: 20),
                   ),
                   GestureDetector(
@@ -134,7 +136,9 @@ class HomeView extends GetView<HomeController> {
                       await signInWithGoogle();
                     },
                     child: CircleAvatar(
-                      backgroundColor: Colors.red,
+                      backgroundImage: NetworkImage(
+                          FirebaseAuth.instance.currentUser!.photoURL!),
+                      backgroundColor: Colors.transparent,
                     ),
                   )
                 ],
