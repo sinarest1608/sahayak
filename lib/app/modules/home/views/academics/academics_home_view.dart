@@ -1,8 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:Sahayak/app/modules/home/views/academics/about_professors_view.dart';
-import 'package:Sahayak/app/modules/home/views/academics/chat/screen/chat_view.dart';
+import 'package:sahayak/app/modules/home/views/academics/about_professors_view.dart';
+import 'package:sahayak/app/modules/home/views/academics/chat/screen/chat_view.dart';
 
 class AcademicsHomeWidget extends GetView {
   // late String dropDownValue;

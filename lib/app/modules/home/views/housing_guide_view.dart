@@ -1,9 +1,9 @@
 import 'dart:developer';
 
-import 'package:Sahayak/app/modules/home/controllers/home_controller.dart';
+import 'package:sahayak/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:Sahayak/app/modules/home/widgets/listing_card.dart';
+import 'package:sahayak/app/modules/home/widgets/listing_card.dart';
 
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
