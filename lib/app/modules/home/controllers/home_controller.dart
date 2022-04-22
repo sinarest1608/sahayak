@@ -20,7 +20,7 @@ class HomeController extends GetxController {
   getProperties() async {
     log("start");
     var url = Uri.parse(
-        "https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6");
+        "https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002&hitsPerPage=6");
     var response = await http.get(url, headers: {
       'x-rapidapi-host': 'bayut.p.rapidapi.com',
       'x-rapidapi-key': 'c64f38dfefmsh69875933d1b9caep14e3ddjsn2adf8806a2a5'

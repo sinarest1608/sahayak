@@ -7,13 +7,34 @@ import 'package:sahayak/app/modules/home/views/listing_view.dart';
 
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-Widget listingCard(String title, String price, String rentFreq, String url) {
+Widget listingCard(
+    int id,
+    String title,
+    String description,
+    String price,
+    String rentFreq,
+    String url,
+    String perMatch,
+    String baths,
+    String beds,
+    String area,
+    List keywords) {
   log(title + rentFreq + price);
   return Padding(
     padding: const EdgeInsets.all(10.0),
     child: GestureDetector(
       onTap: () {
-        Get.to(() => ListingView());
+        Get.to(() => ListingView(
+              id: id,
+              title: title,
+              description: description,
+              percMatch: int.parse(perMatch),
+              rent: price,
+              baths: baths,
+              rooms: beds,
+              area: area,
+              keywords: keywords,
+            ));
       },
       child: Card(
         elevation: 10,
@@ -83,7 +104,7 @@ Widget listingCard(String title, String price, String rentFreq, String url) {
                     color: Colors.orange[900],
                   ),
                   Text(
-                    "89%",
+                    "$perMatch%",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
                   Text(" match"),
