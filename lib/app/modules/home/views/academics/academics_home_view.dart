@@ -24,12 +24,6 @@ class AcademicsHomeWidget extends GetView {
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),
-              // style: FlutterFlowTheme.of(context)
-              //     .bodyText1
-              //     .override(
-              //       fontFamily: 'Poppins',
-              //       fontSize: 18,
-              //     ),
             ),
           ),
           Padding(
@@ -44,12 +38,19 @@ class AcademicsHomeWidget extends GetView {
                     onTap: () {
                       Get.to(() => ChatScreen(courseName));
                     },
-                    child: Text(
-                      'Join',
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 1, 91, 6),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                    child: Container(
+                      color: Color.fromARGB(255, 1, 91, 6),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 3),
+                        child: Text(
+                          'Join',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
                     ),
                   ),
                 ),

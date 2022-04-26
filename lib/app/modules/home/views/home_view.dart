@@ -11,6 +11,7 @@ import 'package:sahayak/app/modules/home/views/academics/academics_home_view.dar
 import 'package:sahayak/app/modules/home/views/housing_guide_view.dart';
 import 'package:sahayak/app/utils/google_signin.dart';
 import 'package:octo_image/octo_image.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeView extends GetView<HomeController> {
   final controller = Get.put(HomeController());
@@ -31,7 +32,11 @@ class HomeView extends GetView<HomeController> {
                         Get.back();
                       },
                       child: Text('Nay')),
-                  TextButton(onPressed: () {}, child: Text('Yayy!')),
+                  TextButton(
+                      onPressed: () {
+                        launch("https://www.instagram.com/p/CcBGxSJO6PN/");
+                      },
+                      child: Text('Yayy!')),
                 ]);
           },
           child: Container(
@@ -61,7 +66,11 @@ class HomeView extends GetView<HomeController> {
                         Get.back();
                       },
                       child: Text('Nay')),
-                  TextButton(onPressed: () {}, child: Text('Yayy!')),
+                  TextButton(
+                      onPressed: () {
+                        launch("https://www.instagram.com/p/CbshAutOezY/");
+                      },
+                      child: Text('Yayy!')),
                 ]);
           },
           child: Container(
@@ -91,7 +100,11 @@ class HomeView extends GetView<HomeController> {
                         Get.back();
                       },
                       child: Text('Nay')),
-                  TextButton(onPressed: () {}, child: Text('Yayy!')),
+                  TextButton(
+                      onPressed: () {
+                        launch("https://www.instagram.com/p/CZNdjzIuyM6/");
+                      },
+                      child: Text('Yayy!')),
                 ]);
           },
           child: Container(
